@@ -6,9 +6,9 @@
   </head>
   <body>
     <h1>Hello!</h1>
-      <audio src="horse.ogg" type="audio/ogg" data-key="72">
+      <audio src="drums_mp3/kick1.mp3" type="audio/mp3" data-key="86">
       </audio>
-      <div class=".key" data-key="72" style="background-color:red;height:50px;width:50px;color:white">H</div>
+      <div class=".key" data-key="86" style="background-color:red;height:50px;width:50px;color:white">V</div>
 
     <script type="text/javascript">
       function removeTransition(e) {
@@ -29,7 +29,7 @@
       const keys = Array.from(document.querySelectorAll('.key'));
       keys.forEach(key => key.addEventListener('transitionend', removeTransition));
       window.addEventListener('keydown', playSound);
-      window.addEventListener('keydown', function(e){console.log(e.keyCode)});
+      // window.addEventListener('keydown', function(e){console.log(e.keyCode)});
     </script>
   </body>
 </html>
