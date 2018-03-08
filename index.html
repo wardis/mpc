@@ -2,11 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>MPC PLAYER</title>
+    <title>BeatMaker</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Make Some Cool Music!</h1>
+    <h1>Play some cool Beats!</h1>
+    <p>Use your keyboard to play.</p>
 
     <audio src="drums_mp3/kick1.mp3" type="audio/mp3" data-key="82"></audio>
     <audio src="drums_mp3/kick2.mp3" type="audio/mp3" data-key="84"></audio>
@@ -19,20 +20,20 @@
     <audio src="drums_mp3/aah.mp3" type="audio/mp3" data-key="78"></audio>
 
     <div class="container">
-      <div class="key" data-key="82"><span>R</span></div>
-      <div class="key" data-key="84"><span>T</span></div>
-      <div class="key" data-key="89"><span>Y</span></div>
-      <div class="key" data-key="70"><span>F</span></div>
-      <div class="key" data-key="71"><span>G</span></div>
-      <div class="key" data-key="72"><span>H</span></div>
-      <div class="key" data-key="86"><span>V</span></div>
-      <div class="key" data-key="66"><span>B</span></div>
-      <div class="key" data-key="78"><span>N</span></div>
+      <div class="key" data-key="82"><span>R</span><span class="hint">KICK</span></div>
+      <div class="key" data-key="84"><span>T</span><span class="hint">KICK</span></div>
+      <div class="key" data-key="89"><span>Y</span><span class="hint">CLAP</span></div>
+      <div class="key" data-key="70"><span>F</span><span class="hint">CLAP</span></div>
+      <div class="key" data-key="71"><span>G</span><span class="hint">HI HAT</span></div>
+      <div class="key" data-key="72"><span>H</span><span class="hint">SNARE</span></div>
+      <div class="key" data-key="86"><span>V</span><span class="hint">SNAP</span></div>
+      <div class="key" data-key="66"><span>B</span><span class="hint">HII</span></div>
+      <div class="key" data-key="78"><span>N</span><span class="hint">AAH</span></div>
     </div>
 
     <script type="text/javascript">
       function removeTransition(e) {
-        if (e.propertyName != 'transform') return;
+        // if (e.propertyName != 'transform') return;
         e.target.classList.remove('playing');
       }
 
@@ -42,7 +43,6 @@
         if(!audio) return;
 
         key.classList.add('playing');
-        setTimeout(function(){ key.classList.remove('playing'); }, 100);
         audio.currentTime = 0;
         audio.play();
       }
@@ -50,7 +50,6 @@
       const keys = Array.from(document.querySelectorAll('.key'));
       keys.forEach(key => key.addEventListener('transitionend', removeTransition));
       window.addEventListener('keydown', playSound);
-      // window.addEventListener('keydown', function(e){console.log(e.keyCode)});
     </script>
   </body>
 </html>

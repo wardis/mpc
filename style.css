@@ -5,9 +5,10 @@ body {
 }
 
 .container {
-  width: 380px;
+  width: 390px;
   margin: 0 auto;
-  border: 2px solid;
+  border: 5px solid;
+  box-shadow: 2px 2px 20px #2f3f46ed
 }
 
 .key {
@@ -15,13 +16,23 @@ body {
   height: 100px;
   background: darkgray;
   margin: 10px;
-  line-height: 100px;
+  line-height: 70px;
   color: white;
   font-size: 60px;
+  border: 3px solid #9a9a9a;
+  box-shadow: 2px 2px 10px #1fb1d852;
   display: inline-block;
+  transition: all .3s;
 }
 
 .key.playing {
   background: #00BCD4;
+  border-color: #00e2ffdb;
   box-shadow: 0 0 20px #00bcd4e8;
+}
+
+span.hint {
+  font-size: 14px;
+  display: block;
+  line-height: 14px;
 }
