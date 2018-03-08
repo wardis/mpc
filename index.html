@@ -3,12 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title>MPC PLAYER</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Hello!</h1>
-      <audio src="drums_mp3/kick1.mp3" type="audio/mp3" data-key="86">
-      </audio>
-      <div class=".key" data-key="86" style="background-color:red;height:50px;width:50px;color:white">V</div>
+    <h1>Make Some Cool Music!</h1>
+
+    <audio src="drums_mp3/kick1.mp3" type="audio/mp3" data-key="82"></audio>
+    <audio src="drums_mp3/kick2.mp3" type="audio/mp3" data-key="84"></audio>
+    <audio src="drums_mp3/clap1.mp3" type="audio/mp3" data-key="89"></audio>
+    <audio src="drums_mp3/clap2.mp3" type="audio/mp3" data-key="70"></audio>
+    <audio src="drums_mp3/hihat.mp3" type="audio/mp3" data-key="71"></audio>
+    <audio src="drums_mp3/snare.mp3" type="audio/mp3" data-key="72"></audio>
+    <audio src="drums_mp3/snap.mp3" type="audio/mp3" data-key="86"></audio>
+    <audio src="drums_mp3/hi.mp3" type="audio/mp3" data-key="66"></audio>
+    <audio src="drums_mp3/aah.mp3" type="audio/mp3" data-key="78"></audio>
+
+    <div class="container">
+      <div class="key" data-key="82"><span>R</span></div>
+      <div class="key" data-key="84"><span>T</span></div>
+      <div class="key" data-key="89"><span>Y</span></div>
+      <div class="key" data-key="70"><span>F</span></div>
+      <div class="key" data-key="71"><span>G</span></div>
+      <div class="key" data-key="72"><span>H</span></div>
+      <div class="key" data-key="86"><span>V</span></div>
+      <div class="key" data-key="66"><span>B</span></div>
+      <div class="key" data-key="78"><span>N</span></div>
+    </div>
 
     <script type="text/javascript">
       function removeTransition(e) {
@@ -22,6 +42,7 @@
         if(!audio) return;
 
         key.classList.add('playing');
+        setTimeout(function(){ key.classList.remove('playing'); }, 100);
         audio.currentTime = 0;
         audio.play();
       }
